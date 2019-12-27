@@ -1,0 +1,32 @@
+create table Employee
+(Employeeid integer primary key, EmployeeName varchar2(20), EmployeeAdddress varchar2(20),DOB date, DOJ date,
+ Salary integer)
+
+insert into Employee values(1000,'Kavya','Kochi','06-15-1997','01-20-2020',67477)
+insert into Employee values(1001,'Ann','bangalore','09-15-1991','01-20-2012',97477)
+insert into Employee values(1002,'Sanju','Pune','03-22-1988','05-10-2020',100)
+insert into Employee values(1003,'Sagar','Pune','09-05-1967','01-20-2000',107477)
+insert into Employee values(1004,'Lulu','Mumbai','03-22-2008','05-10-2020',7477)
+insert into Employee values(1005,'ava','Mumbai','03-22-1997','05-10-2020',67477)
+
+
+
+
+select * from Employee
+
+select * from Employee where salary>20000
+
+select * from Employee where EmployeeName like ('%a') or EmployeeName like ('%p') or EmployeeName like ('%r')
+
+Update Employee set salary=salary+(0.2*salary)
+
+delete from Employee where salary<5000
+
+Alter table Employee add Email varchar2(20)
+
+update employee set email='kavya@gmail.com' where employeeid=1000
+update employee set email='Ann@gmail.com' where employeeid=1001
+update employee set email='Sanju@gmail.com' where employeeid=1002
+update employee set email='Sagar@gmail.com' where employeeid=1003
+update employee set email='Lulu@gmail.com' where employeeid=1004
+update employee set email='ava@gmail.com' where employeeid=1005
