@@ -1,0 +1,31 @@
+
+create table Employee1
+(Employeeid integer  primary key,
+ EmployeeName varchar2(20) not null,
+ EmployeeAdddress varchar2(20)  check(EmployeeAdddress not in('Newyork','London','Paris')) ,
+ Salary integer  check(Salary between 20000 and 30000),
+ CompanyAdddress varchar2(20) default 'ASV Suntech Park'
+)
+
+create table salary
+(
+ Employeeid integer  primary key,
+ Employeepf integer check(Employeepf>0),
+ Employeehra integer check(Employeehra>0)
+)
+
+
+Alter table salary add constraint fkempid foreign key(Employeeid) references employee1(Employeeid)
+
+insert into Employee1 values(1000,'haa','punr',27867,'mumbai')
+
+select * from Employee1 
+
+----------------------------
+
+create table Citizen
+(
+	CID integer constraint pkCitizen primary Key,
+	CitizenDOB date constraint dobNotNull not null,
+	CitizenDOD date 
+)
