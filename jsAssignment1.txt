@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>form</title>
+<script type="text/javascript">
+
+	function validate() {
+
+		
+
+		var uname = document.getElementById("username").value;
+
+		var gender = document.getElementsByName('gender');
+		var comments = document.getElementsByName('comments');
+
+		
+		g=(gender[0].checked)?gender[0].value : gender[1].value;
+		c=(comments[0].checked)?comments[0].value :comments[1].value;
+
+		var dispuname = document.getElementById("dispuname")
+		var dispgender = document.getElementById("dispgender")
+		var dispComments = document.getElementById("dispComments")
+
+		if (uname.length == 0) {
+			dispuname.innerHTML = "<font color=red>Please enter Username</font>"
+			return false;
+		} else {
+			dispuname.innerHTML = "Name : " + uname
+		}
+
+		dispgender.innerHTML = "Your gender is : " + g
+		dispComments.innerHTML = "Your comment is : " + c
+	}
+</script>
+
+</head>
+<body>
+	<form action="success.html" >
+		<table cellpadding="10" bgcolor="pink" border="1" align="center">
+			<tr>
+				<td>Username :</td>
+				<td><input type="text" name="username" id="username"></td>
+			</tr>
+			<tr>
+				<td>Spouse Name :</td>
+				<td><input type="text" name="spousename" id="spousename"></td>
+			</tr>
+			<tr>
+				<td>Gender</td>
+				<td><input type="radio" name="gender" id="male" value="male" checked>Male<br/>
+					<input type="radio" name="gender" id="female" value="female">Female
+				</td>
+			</tr>
+			<tr>
+				<td>Comments</td>
+				<td><input type="radio" name="comments" id="like" value="like" checked>Like<br/>
+					<input type="radio" name="comments" id="dontLike" value="don't like">Don't Like
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><input type="button" value="Submit" onclick="validate()"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span id="dispuname"></span></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span id="dispgender"></span></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span id="dispComments"></span></td>
+			</tr>
+		</table>
+
+	</form>
+
+</body>
+</html>
